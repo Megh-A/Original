@@ -1,0 +1,178 @@
+<!DOCTYPE Html>
+<html>
+<head>
+
+     <title>Appointment Reason</title>
+
+<style>
+
+body{
+      background-color:#d3c29a; 
+    }
+    
+    h1{
+      font-family: Arial, sans-serif;
+      font-size: 25px;
+      
+    }
+
+    table{
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+  
+  table td{
+      font-weight: bold;
+    }
+
+  buttonns input[type="submit"], buttonns input[type="reset"] {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      background-color: rgb(95, 99, 118);
+      color: rgb(255, 255, 255);
+      margin-right: 30px; 
+    }
+
+</style>
+</head>
+
+
+<body>
+  <div style="text-align:center">
+    <br><h1> <legend align="centre">APPOINTMENT BOOKING</legend></h1>
+    <center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZD-HsVkOHCwg2Fpndv8h2PbgWtwXo-E7FmA&usqp=CAU" alt="Reason" align="center" width="400" height="300" >
+    <form name="registration form" action="Fourth_orig.html" onsubmit="return validateCheckbox()">
+
+<table>
+  <tr>
+    <br><td><label>Required Medical Proffesional</label></td>
+    <td><input type="radio" name="prof" value="doc" required>Doctor
+        <input type="radio" name="prof" value="nur" required>Nurse</br></td>
+  </tr>
+
+  <tr>
+    <br><td><label for="insurance">Enter Insurance Information</label></td>
+    <td><input type="text" name="txtins" required></td>
+  </tr>
+
+  <tr>
+    <td><label for="Referr"></label>Referring Physician</label></td>
+    <td><input type="text" name="txtref" ></td>
+  </tr>
+
+  <tr>
+    <td><label for="date">Preferred Date</label></td>
+    <td><input type="text" id="date" onclick="showList1()" required>
+        <select id="dateList" style="display:none;" name="date" size="5">
+          <option value="2023-04-21">April 21, 2023</option>
+          <option value="2023-04-22">April 22, 2023</option>
+          <option value="2023-04-23">April 23, 2023</option>
+          <option value="2023-04-24">April 24, 2023</option>
+          <option value="2023-04-25">April 25, 2023</option>
+          <option value="2023-04-26">April 26, 2023</option>
+          <option value="2023-04-27">April 27, 2023</option>
+          <option value="2023-04-28">April 28, 2023</option>
+          <option value="2023-04-29">April 29, 2023</option>
+          <option value="2023-04-30">April 30, 2023</option>
+          <option value="2023-05-20">May 20, 2023</option>
+          <option value="2023-05-21">May 21, 2023</option>
+          <option value="2023-05-22">May 22, 2023</option>
+          <option value="2023-05-23">May 23, 2023</option>
+        </select>
+        </td>
+  </tr>
+    
+  <tr>
+    <td><label for="time">Preferred time</label></td>
+    <td><input type="text" id="time" onclick="showList2()" required>
+        <select id="timeList" style="display:none;" name="time" size="5">
+          <option value="10:00 AM">10:00 AM</option>
+          <option value="10:30 AM">10:30 AM</option>
+          <option value="11:00 AM">11:00 AM</option>
+          <option value="11:30 AM">11:30 AM</option>
+          <option value="12:00 PM">12:00 PM</option>
+          <option value="1:00 PM">1:00 PM</option>
+          <option value="1:30 PM">1:30 PM</option>
+          <option value="2:00 PM">2:00 PM</option>
+          <option value="2:30 PM">2:30 PM</option>
+          <option value="3:00 PM">3:00 PM</option>
+          <option value="3:30 PM">3:30 PM</option>
+          <option value="4:00 PM">4:00 PM</option>
+        </select>
+        </td>
+  </tr>
+  
+  <tr>
+    <td><input type="checkbox" id="medical-info-permission" name="medical-info-permission" value="yes" required>
+      <label for="medical-info-permission">I give permission for my medical information to  </br>be shared with my primary care physician.</label></td>
+  </tr>
+
+</table>
+</center>
+
+<script>
+
+function clearForm() {
+  document.getElementById("State").innerHTML = '';
+  }
+
+function validateCheckbox() {
+  var FeverChecked = document.getElementById("FeCheck").checked;
+  var CoughChecked = document.getElementById("CCheck").checked;
+  var ShortChecked = document.getElementById("SCheck").checked;
+  var MuscleChecked = document.getElementById("MCheck").checked;
+  var FatigueChecked = document.getElementById("Faheck").checked;
+  var NauseaChecked = document.getElementById("NCheck").checked;
+  var OthersChecked = document.getElementById("OCheck").checked;
+  var NoneChecked = document.getElementById("NoneCheck").checked;
+
+  if (FeverChecked || CoughChecked || ShortChecked || MuscleChecked ||FatigueChecked ||NauseaChecked ||OthersChecked||NoneChecked ) {
+    return true;
+    } else {
+      alert("Please select at least one option for Symptoms.");
+      return false;
+    }
+  }
+
+function showList1() {
+  document.getElementById("dateList").style.display = "block";
+  }
+
+function selectDate() {
+  var selectedDate = document.getElementById("dateList").value;
+  document.getElementById("date").value = selectedDate;
+  document.getElementById("dateList").style.display = "none";
+  }
+
+  var dateList = document.getElementById("dateList");
+  for (var i = 0; i < dateList.length; i++) {
+  dateList[i].addEventListener("click", selectDate);
+  }
+
+      
+function showList2() {
+  document.getElementById("timeList").style.display = "block";
+  }
+
+function selectTime() {
+  var selectedTime = document.getElementById("timeList").value;
+  document.getElementById("time").value = selectedTime;
+  document.getElementById("timeList").style.display = "none";
+  }
+
+  var timeList = document.getElementById("timeList");
+  for (var i = 0; i < timeList.length; i++) {
+  timeList[i].addEventListener("click", selectTime);
+  }
+      
+</script>
+
+
+<buttonns><br><input type="submit" value="Book Appointment" onClick="Fourth_orig.html">
+              <input type="reset" value="Clear" onclick="clearForm()"></buttonns>
+
+</form>
+
+</body>
+</html>
