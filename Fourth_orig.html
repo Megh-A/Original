@@ -1,0 +1,84 @@
+<!DOCTYPE Html>
+<html>
+<head>
+
+     <title>Appointment Reason</title>
+
+<style>
+
+body{
+      background-color:#ffffffda; 
+    }
+
+table{
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+  
+table td{
+      font-weight: bold;
+    }    
+
+buttonns input[type="submit"] {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      background-color: rgb(95, 99, 118);
+      color: rgb(255, 255, 255);
+      margin-right: 30px; 
+    }   
+
+
+</style>
+</head>
+
+
+<body>
+<center><img src="https://png.pngtree.com/png-vector/20190228/ourmid/pngtree-check-mark-icon-design-template-vector-isolated-png-image_711429.jpg" alt="Appointment Confirmed" align="center" width="100" height="100" >
+<form name="Appointment booking Successfull" action="Third_orig.html" >
+<legend align="center" style='color:#000000;font-size:40px;font-family:Arial, sans-serif'>Success!! Your Appointment is Confirmed.</legend>
+
+<buttonns><br><input type="submit" value="Book another Appointment" onClick="Third_orig.html"></buttonns>
+
+<br><br><br><legend style='color:#000000;font-size:22px;font-family:Arial, sans-serif;font-weight:bold'>Submit your Feedback</legend>
+
+<table>
+  
+  <tr>
+    <br><td><label>Are you satisfied with the experience</label></td>
+    <td><input type="radio" name="exp" value="Yees" >Yes
+        <input type="radio" name="exp" value="nnoo" >No<br><br></td>
+  </tr>
+
+  <tr>
+    <td><br><label>What did you like the most about this application</label></td>
+    <td><input type="checkbox" name="like1" value="eas" id="easCheck">Easy to use
+        <input type="checkbox" name="like2" value="rel" id="relCheck">Fast and Reliable</br>
+        <input type="checkbox" name="like3" value="hel" id="helCheck">Helpful
+        <input type="checkbox" name="like4" value="lok" id="lookCheck">Looking Good<br><br></td>
+  </tr>
+
+  <tr>
+    <br><td><label for="Otherr">Do you want to let us know anyting else?</label></td>
+    <td><input type="text" name="txtot"></td>
+  </tr>
+
+</table>
+
+<script>
+
+function clearForm() {
+  alert("Your Feedback is received. Thanks");
+  document.getElementById("State").innerHTML = '';
+  }
+
+</script>
+
+
+<buttonns><br><input type="reset" id="feedsubmit" value="Submit" onclick="clearForm()"></buttonns>
+
+
+</center>
+</form>
+</body>
+</html>
